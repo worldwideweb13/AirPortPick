@@ -87,7 +87,7 @@ main {
   margin-top: 8px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
     .open,
     .close {
         display: block;
