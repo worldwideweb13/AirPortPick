@@ -17,14 +17,45 @@
                         <th scope="col">注文番号</th>
                         <th scope="col">注文時刻</th>
                         <th scope="col">受取希望時刻</th>
+                        <th scope="col">配送日時</th>
+                        <th scope="col">目標時間</th>
+                        <th scope="col">担当ピッカー</th>                    
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>111</td>
+                        <td>12月1日 10:40</td>
+                        <td>12月2日 13:50</td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">---</button>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" value="項目1">13:00</button></li>
+                                    <li><button class="dropdown-item" value="項目2">14:00</button></li>
+                                    <li><button class="dropdown-item" value="項目3">15:00</button></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>
+                                <select name="kibun">
+                                <option value="saikou">00:10</option>
+                                <option value="botiboti">00:15</option>
+                                <option value="hutuu">00:20</option>
+                                </select>
+                        </td>
+                        <td>
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">---</button>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" value="項目1">小笠原</button></li>
+                                    <li><button class="dropdown-item" value="項目2">紀野</button></li>
+                                    <li><button class="dropdown-item" value="項目3">鈴木</button></li>
+                                    <li><button class="dropdown-item" value="項目3">柳</button></li>
+                                </ul>
+                            </div>
+                        </td>                                                
                         </tr>
                         <tr>
                         <th scope="row">2</th>
@@ -56,18 +87,21 @@
                             <th scope="row">1</th>
                             <td>Mark</td>
                             <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>12:00</td>
+                            <td>小笠原</td>
                             </tr>
                             <tr>
                             <th scope="row">2</th>
                             <td>Jacob</td>
                             <td>Thornton</td>
-                            <td>@fat</td>
+                            <td>12:00</td>
+                            <td>小笠原</td>
                             </tr>
                             <tr>
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                            <td>12:00</td>
+                            <td>小笠原</td>
                             </tr>
                         </tbody>
                     </table>            
