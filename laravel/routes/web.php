@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/manage/index', function () {
     return view('manage/index');
 });
+
+Route::get('/picker/list-all', function () {
+    return view('picker/list-all');
+});

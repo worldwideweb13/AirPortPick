@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ asset('/css/picker/common.css') }}">
-  <title>割当一覧</title>
+  <title>@yield('title')</title>
 </head>
 <body>
   <header>
@@ -12,11 +12,11 @@
     <div class="header_fix">
       <div class="burger">
         <label for="menu" class="open close">
-          <img src="./img/menu.png" alt="">
+          <img src="{{asset('/images/menu.png')}}" alt="">
         </label>
       </div>
       <div class="header_title">
-        AirportPick
+        @yield('header_title')
       </div>
       <div>　　</div>
     </div>
@@ -44,14 +44,8 @@
 
     <!-- メイン -->
     <main>
-      <div class="list_all">
-        <h3>全割り当てリスト</h3>
-
-      </div>
+    @yield('content')
     </main>
-
-
-
   </div>
 
 </body>
