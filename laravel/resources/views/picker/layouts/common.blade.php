@@ -3,8 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <!-- 共通CSS -->
   <link rel="stylesheet" href="{{ asset('/css/picker/common.css') }}">
-  <title>割当一覧</title>
+  <!-- 個別CSS -->
+  @stack('css')
+
+  <title>@yield('title')</title>
 </head>
 <body>
   <header>
@@ -12,13 +21,13 @@
     <div class="header_fix">
       <div class="burger">
         <label for="menu" class="open close">
-          <img src="./img/menu.png" alt="">
+          <img src="{{asset('/images/menu.png')}}" alt="">
         </label>
       </div>
       <div class="header_title">
-        AirportPick
+        @yield('header_title')
       </div>
-      <div>　　</div>
+      <div>　　　　</div>
     </div>
   </header>
 
@@ -27,15 +36,15 @@
     <label for="menu" class="back"></label>
     <!-- サイドバー -->
     <aside>
-      <a href="reservation-history.php">
+      <a href="#">
         <i class="history_icon"></i>
-        <span>割当リスト</span>
+        <span>注文リスト</span>
       </a>
-      <a href="reservation-create.php">
+      <a href="#">
         <i class="reserve_icon"></i>
-        <span>完了履歴</span>
+        <span>配達完了一覧</span>
       </a>
-      <a href="logout.php">
+      <a href="#">
         <i class="setting_icon"></i>
         <span>ログアウト</span>
       </a>
@@ -44,14 +53,8 @@
 
     <!-- メイン -->
     <main>
-      <div class="list_all">
-        <h3>全割り当てリスト</h3>
-
-      </div>
+    @yield('content')
     </main>
-
-
-
   </div>
 
 </body>
