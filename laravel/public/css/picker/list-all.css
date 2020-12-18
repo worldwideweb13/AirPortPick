@@ -3,3 +3,11 @@
   margin: 20px;
   overflow: auto;
 }
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-body h4{
+  line-height: 1.5;
+}

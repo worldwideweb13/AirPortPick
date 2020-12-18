@@ -27,7 +27,7 @@
       <div class="header_title">
         @yield('header_title')
       </div>
-      <div>　　</div>
+      <div>　　　　</div>
     </div>
   </header>
 
@@ -36,15 +36,15 @@
     <label for="menu" class="back"></label>
     <!-- サイドバー -->
     <aside>
-      <a href="reservation-history.php">
+      <a href="#">
         <i class="history_icon"></i>
-        <span>割当リスト</span>
+        <span>注文リスト</span>
       </a>
-      <a href="reservation-create.php">
+      <a href="#">
         <i class="reserve_icon"></i>
-        <span>完了履歴</span>
+        <span>配達完了一覧</span>
       </a>
-      <a href="logout.php">
+      <a href="#">
         <i class="setting_icon"></i>
         <span>ログアウト</span>
       </a>
