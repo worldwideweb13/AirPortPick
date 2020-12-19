@@ -51,6 +51,30 @@ class ItemTableSeeder extends Seeder
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => date('Y-m-d H:i:s'),
             ],
+            [
+                'iid' => '4',
+                'icate' => '雑貨/工芸',
+                'iname' => 'ハンドバッグ',
+                'iprice' => '40000',
+                'itext' => '職人技の光る、メイドイン北海道のカバン',
+                'pic' => '4',
+                'shop' => 'かばんのヤマザキ',
+                'cold' => '常温',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
+            [
+                'iid' => '5',
+                'icate' => 'その他',
+                'iname' => '兼松ハッカ',
+                'iprice' => '800',
+                'itext' => '北見産の天然ハッカ油です。気分スッキリ',
+                'pic' => '5',
+                'shop' => 'ハッカ一番（いちばん）',
+                'cold' => '常温',
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+            ],
         ]);
     }
 }
