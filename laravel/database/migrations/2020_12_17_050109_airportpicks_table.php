@@ -23,9 +23,11 @@ class AirportpicksTable extends Migration
             $table->string('shop');
             $table->string('cold');
             $table->timestamps();
+            $table->primary(['iid']);
          });
 
          Schema::create('carts', function (Blueprint $table) {
+            $table->integer('oitem');
             $table->integer('onum');
             $table->string('iid');
             $table->string('iname');
@@ -34,6 +36,7 @@ class AirportpicksTable extends Migration
             $table->integer('checked');
             $table->integer('sprice');
             $table->timestamps();
+            $table->primary(['oitem']);
          });
 
          Schema::create('order_tables', function (Blueprint $table) {
@@ -51,6 +54,7 @@ class AirportpicksTable extends Migration
             $table->integer('ported');
             $table->integer('sent');
             $table->timestamps();
+            $table->primary(['onum']);
          });
 
          Schema::create('pickers', function (Blueprint $table) {
@@ -58,6 +62,7 @@ class AirportpicksTable extends Migration
             $table->string('ppass');
             $table->string('pname');
             $table->timestamps();
+            $table->primary(['pid']);
          });
 
          Schema::create('users', function (Blueprint $table) {
@@ -71,6 +76,7 @@ class AirportpicksTable extends Migration
             $table->string('splace2');
             $table->string('splace3');
             $table->timestamps();
+            $table->primary(['uid']);
          });
 
 
