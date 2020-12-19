@@ -14,67 +14,67 @@ class AirportpicksTable extends Migration
     public function up()
     {
         Schema::create('items', function (Blueprint $table) {
-            $table->integer('iid');
-            $table->string('icate');
-            $table->string('iname');
-            $table->integer('iprice');
-            $table->string('itext');
-            $table->string('pic');
-            $table->string('shop');
-            $table->string('cold');
+            $table->integer('iid');//アイテム自体の番号
+            $table->string('icate');//商品のカテゴリー
+            $table->string('iname');//商品名
+            $table->integer('iprice');//商品の価格
+            $table->string('itext');//商品の説明文
+            $table->string('pic');//使用画像
+            $table->string('shop');//取り扱い店舗
+            $table->string('cold');//常温・冷蔵・冷凍
             $table->timestamps();
             $table->primary(['iid']);
          });
 
          Schema::create('carts', function (Blueprint $table) {
-            $table->integer('oitem');
-            $table->integer('onum');
-            $table->string('iid');
-            $table->string('iname');
-            $table->integer('snum');
-            $table->integer('picked');
-            $table->integer('checked');
-            $table->integer('sprice');
+            $table->integer('oitem');//アイテムごとの注文番号
+            $table->integer('onum');//注文自体の番号
+            $table->string('iid');//アイテム自体の番号
+            $table->string('iname');//アイテム自体の名前
+            $table->integer('snum');//点数
+            $table->integer('picked');//ピックアップしたか
+            $table->integer('checked');//検品したか
+            $table->integer('sprice');//価格
             $table->timestamps();
             $table->primary(['oitem']);
          });
 
          Schema::create('order_tables', function (Blueprint $table) {
-            $table->integer('onum');
-            $table->dateTime('otime');
-            $table->integer('item_total');
-            $table->integer('dprice');
-            $table->string('uid');
-            $table->string('pid');
-            $table->string('place');
-            $table->string('portdate');
-            $table->string('delidate');
-            $table->string('delitime');
-            $table->integer('paid');
-            $table->integer('ported');
-            $table->integer('sent');
+            $table->integer('onum');//注文自体の番号
+            $table->string('otime');//注文受付時間
+            $table->string('item_total');//商品金額の合計
+            $table->string('dprice');//宅配料
+            $table->string('uid');//オーダーしたユーザーのID
+            $table->string('pid');//担当ピッカーのID
+            $table->string('place');//受取場所
+            $table->string('portdate');//空港での受取日時
+            $table->string('delidate');//宅配の指定日
+            $table->string('delitime');//宅配の指定時間
+            $table->integer('paid');//支払い済か
+            $table->integer('ported');//客が空港でピックアップしたか
+            $table->integer('sent');//配送済か
             $table->timestamps();
             $table->primary(['onum']);
          });
 
          Schema::create('pickers', function (Blueprint $table) {
-            $table->integer('pid');
-            $table->string('ppass');
-            $table->string('pname');
+            $table->integer('pid');//ピッカーのID
+            $table->string('ppass');//ピッカーのパスワード
+            $table->string('pname');//ピッカーの名前
             $table->timestamps();
             $table->primary(['pid']);
          });
 
          Schema::create('users', function (Blueprint $table) {
-            $table->string('uid');
-            $table->string('upass');
-            $table->string('uname');
-            $table->string('address');
-            $table->integer('phone');
-            $table->string('birth');
-            $table->string('splace1');
-            $table->string('splace2');
-            $table->string('splace3');
+            $table->integer('uid');//ユーザーID
+            $table->string('upass');//ユーザーパスワード
+            $table->string('uname');//ユーザー氏名
+            $table->string('address');//ユーザー住所
+            $table->string('phone');//ユーザー電話番号
+            $table->string('birth');//ユーザー誕生日
+            $table->string('splace1');//ユーザー配送先１
+            $table->string('splace2');//ユーザー配送先２
+            $table->string('splace3');//ユーザー配送先３
             $table->timestamps();
             $table->primary(['uid']);
          });
