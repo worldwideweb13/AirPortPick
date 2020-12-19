@@ -23,3 +23,7 @@ Route::get('/manage/index', function () {
 Route::get('/picker/list-all', function () {
     return view('picker/list-all');
 });
+
+Route::get('/picker/oder-details', function () {
+    return view('picker/oder-details');
+});

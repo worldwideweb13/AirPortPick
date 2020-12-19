@@ -1,0 +1,36 @@
+.oder-details {
+  background: #f6f6f6;
+  margin: 20px;
+}
+
+.card-wrapper {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 220px;
+  margin: 0 20px 20px 20px;
+}
+
+
+@media screen and (max-width: 760px) {
+
+  .card-wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .card {
+    min-width: 300px;
+    margin: 0 20px 20px 20px;
+    box-sizing: border-box;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+}
