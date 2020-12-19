@@ -36,11 +36,11 @@
     <label for="menu" class="back"></label>
     <!-- サイドバー -->
     <aside>
-      <a href="#">
+      <a href="{{ url('/picker/list-all') }}">
         <i class="history_icon"></i>
         <span>注文リスト</span>
       </a>
-      <a href="#">
+      <a href="{{ url('/picker/list-fixed') }}">
         <i class="reserve_icon"></i>
         <span>配達完了一覧</span>
       </a>
