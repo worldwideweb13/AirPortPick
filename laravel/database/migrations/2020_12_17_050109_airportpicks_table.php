@@ -41,10 +41,12 @@ class AirportpicksTable extends Migration
 
          Schema::create('order_tables', function (Blueprint $table) {
             $table->integer('onum');//注文自体の番号
+            $table->integer('tensu');//注文自体の合計商品点数
             $table->string('otime');//注文受付時間
             $table->string('item_total');//商品金額の合計
             $table->string('dprice');//宅配料
             $table->string('uid');//オーダーしたユーザーのID
+            $table->string('uname');//オーダーしたユーザーの名前
             $table->string('pid');//担当ピッカーのID
             $table->string('place');//受取場所
             $table->string('timelimit');//ピックの期限
