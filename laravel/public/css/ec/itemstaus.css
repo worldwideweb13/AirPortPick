@@ -1,0 +1,11 @@
+.status_box {
+	width: 300px;
+    height: 400px;
+    background-color: antiquewhite;
+    line-height: 4;
+    margin: auto;
+}
+
+.status_box h2{
+	text-align: center;
+}

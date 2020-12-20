@@ -30,4 +30,26 @@ Route::get('/picker/list-fixed', function () {
 
 Route::get('/picker/oder-details', function () {
     return view('picker/oder-details');
+
+// ec   
+  
+Route::get('/ec/item-list', function () {
+    return view('ec/item-list');
+});
+
+Route::get('/ec/cart', function () {
+    return view('ec/cart');
+});
+
+Route::get('/ec/itemcheck', function () {
+    return view('ec/itemcheck');
+});
+
+
+Route::get('/ec/itemstatus', function () {
+    return view('ec/itemstatus');
+});
+
+Route::get('/ec/tyumon_info', function () {
+    return view('ec/tyumon_info');
 });
