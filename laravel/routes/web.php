@@ -33,13 +33,10 @@ Route::get('/picker/oder-details', function () {
 });
 // ec
 
-Route::get('/ec/item-list', function () {
-    return view('ec/item-list');
-});
+Route::get('/ec/item-list','App\Http\Controllers\EcController@Itemsall');
 
-Route::get('/ec/cart', function () {
-    return view('ec/cart');
-});
+
+Route::get('/ec/cart','App\Http\Controllers\EcController@Cartlist');
 
 Route::get('/ec/itemcheck', function () {
     return view('ec/itemcheck');
@@ -50,6 +47,5 @@ Route::get('/ec/itemstatus', function () {
     return view('ec/itemstatus');
 });
 
-Route::get('/ec/tyumon_info', function () {
-    return view('ec/tyumon_info');
-});
+Route::get('/ec/tyumon_info','App\Http\Controllers\EcController@Userlist');
+
