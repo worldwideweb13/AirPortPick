@@ -30,9 +30,9 @@ Route::get('/picker/list-fixed', function () {
 
 Route::get('/picker/oder-details', function () {
     return view('picker/oder-details');
+});
+// ec
 
-// ec   
-  
 Route::get('/ec/item-list', function () {
     return view('ec/item-list');
 });
