@@ -4,28 +4,12 @@
 <link rel="stylesheet" href="{{ asset('/css/picker/list-all.css') }}">
 @endpush
 
-@section('title',"ホーム")
+@section('title',"完了一覧")
 
-@section('header_title',"注文リスト")
+@section('header_title',"ピックアップ済み")
 
 @section('content')
   <div class="list-all">
-    <div class="card">
-      <div class="card-header">
-        注文番号：123
-      </div>
-      <div class="card-body">
-        <h2 class="card-title">小笠原 聡さま</h2>
-        <h4 class="card-text">
-          商品点数：10点<br>
-          冷凍冷蔵：あり<br>
-          合計金額：¥2500<br>
-        </h4>
-        <hr>
-        <h3 class="card-text">回収完了日：12月24日 13:00まで</h3>
-      </div>
-    </div>
-
     <div class="card">
       <div class="card-header">
         注文番号：124
