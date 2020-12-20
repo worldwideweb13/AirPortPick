@@ -138,12 +138,12 @@ class CartTableSeeder extends Seeder
                 [
                     'oitem' => '13',
                     'onum' => '6',
-                    'oiid' => '3',
-                    'iname' => 'さっぽろの学校',
+                    'oiid' => '11',
+                    'iname' => '生チーズケーキ',
                     'snum' => '1',
                     'picked' => '0',
                     'checked' => '0',
-                    'sprice' => '1000',
+                    'sprice' => '3000',
                 ],
                 [
                     'oitem' => '14',
