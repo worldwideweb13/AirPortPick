@@ -29,12 +29,12 @@ class AirportpicksTable extends Migration
          Schema::create('carts', function (Blueprint $table) {
             $table->integer('oitem');//アイテムごとの注文番号
             $table->integer('onum');//注文自体の番号
-            $table->string('iid');//アイテム自体の番号
+            $table->string('oiid');//アイテム自体の番号。itemのiidに相当
             $table->string('iname');//アイテム自体の名前
             $table->integer('snum');//点数
             $table->integer('picked');//ピックアップしたか
             $table->integer('checked');//検品したか
-            $table->integer('sprice');//価格
+            $table->integer('sprice');//単価×数量の価格
             $table->timestamps();
             $table->primary(['oitem']);
          });
