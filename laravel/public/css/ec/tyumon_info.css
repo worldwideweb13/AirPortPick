@@ -1,0 +1,98 @@
+.table {
+	border-collapse: collapse;
+	border-spacing: 5px;
+	margin: 0 auto;
+	padding: 0;
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+  }
+  
+  .table th,
+  .table td {
+	padding: 10px 0;
+	border-bottom: 1px solid #eee;
+  }
+  
+  .table th {
+	padding: 15px 0;
+	font-size: 14px;
+	text-align: center;
+  }
+  .table tr{
+	text-align: center;
+	padding: 20px 0;
+	background-color: #fff;
+  }
+  
+  .td_item{
+	  width: 100px;
+	  height: 100px;
+  }
+  
+  .td_item img{
+  
+	  width: 100%;
+	  object-fit: cover;
+  }
+
+  .infobox{
+	  text-align: center;
+  }
+
+  .infobox h2{
+	  margin-top: 100px;
+	  margin-bottom: 50px;
+  }
+  /* ----- */
+
+  .item_paybox {
+	width: 300px;
+    height: 330px;
+    position: fixed;
+    top: 9%;
+    left: 74%;
+    background-color: whitesmoke;
+}
+
+.pay_text {
+	margin: auto;
+	text-align: center;
+    width: 200px;
+    height: 40px;
+    background-color: aquamarine;
+}
+.pay_text p {
+    top: 3px;
+	position: relative;
+	font-size: 23px;
+}
+.item_cost{
+	display: flex;
+	justify-content: center;
+}
+.item_payc{
+	margin-left: 10px;
+}
+.item_pays{
+	margin-left: 30px;
+}
+.line__{
+	border-bottom: solid 1px;
+    width: 74%;
+    margin: auto;
+}
+
+.pay_table{
+	line-height: 3;
+	margin-top: 20px;
+    display: flex;
+	justify-content: center;
+}
+.pay_table td{
+	padding-left: 20px;
+}
+
+.pay_table tr{
+	padding-top: 10px;
+}
