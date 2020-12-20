@@ -24,8 +24,15 @@ Route::get('/picker/list-all', function () {
     return view('picker/list-all');
 });
 
-// ec 
+Route::get('/picker/list-fixed', function () {
+    return view('picker/list-fixed');
+});
 
+Route::get('/picker/oder-details', function () {
+    return view('picker/oder-details');
+
+// ec   
+  
 Route::get('/ec/item-list', function () {
     return view('ec/item-list');
 });
