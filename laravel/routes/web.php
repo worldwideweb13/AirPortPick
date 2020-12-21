@@ -50,4 +50,4 @@ Route::get('/ec/itemstatus', function () {
     return view('ec/itemstatus');
 });
 
-Route::get('/ec/tyumon_info','App\Http\Controllers\EcController@Userlist');
+Route::get('/ec/tyumon_info','EcController@Userlist');
