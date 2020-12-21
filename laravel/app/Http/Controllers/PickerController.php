@@ -23,6 +23,10 @@ class PickerController extends Controller
     ]);
     }
 
+    public function orderdetails(){
+        return view('picker/order-details');
+    }
+
 
 
 
