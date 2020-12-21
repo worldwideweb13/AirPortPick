@@ -16,6 +16,14 @@ class PickerController extends Controller
     }
 
 
+    public function listfixed(){
+        $order_tables = Order_table::orderBy('otime', 'asc')->get();
+        return view('picker/list-fixed', [
+        'order_tables' => $order_tables
+    ]);
+    }
+
+
 
 
 }
