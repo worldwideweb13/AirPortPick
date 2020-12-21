@@ -20,12 +20,16 @@ Route::get('/', function () {
 //manageのルート記述
 Route::get('/manage/index', 'Order_tablesController@OrderList' );
 
+
+
 // pickerのルート記述
 Route::get('/picker/list-all', 'PickerController@listall');
 
 Route::get('/picker/list-fixed', 'PickerController@listfixed');
 
 Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails')->name('order-details');
+
+Route::get('/picker/order-update/{onum}', 'PickerController@orderupdate');
 
 
 // ecのルート記述

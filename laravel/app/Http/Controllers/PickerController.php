@@ -37,11 +37,15 @@ class PickerController extends Controller
             $items[] = $item;
         }
 
-        // dd($items);
         return view('picker/order-details', [
             'orderData' => $orderData,
             'items' => $items
             ]);
+    }
+
+    public function orderupdate($onum){
+        $order = Order_table::where('onum',$onum)->get()->update(['comp' => '1']);
+        return redirect('picker/otsu');
     }
 
 
