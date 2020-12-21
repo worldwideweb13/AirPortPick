@@ -24,7 +24,7 @@
             合計金額：¥{{ $order_table->item_total}}<br>
           </h4>
           <hr>
-          <h3 class="card-text">回収期限：{{ $order_table->timelimit }}まで</h3>
+          <h3 class="card-text">回収期限：{{ $order_table->timelimit }}</h3>
         </div>
       </div>
     @endforeach
