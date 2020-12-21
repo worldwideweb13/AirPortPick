@@ -14,7 +14,7 @@
 
 @section('content')
   @foreach($orderData as $order)
-    <form action="{{ url('picker/oder-update/'.$order['onum']) }}" method="POST">
+    <form action="{{ url('picker/order-update/'.$order['onum']) }}" method="GET">
     {{ csrf_field() }}
   @endforeach
     <div class="order-details">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-footer">
                   <small class="text-muted">
-                    <label><input type="radio" name="{{ $ite['iid']}}" value="true"> ピックアップ完了</label>
+                    <label><input type="radio" name="{{ $ite['iid']}}" value="true" required> ピックアップ済み</label>
                     <label><input type="radio" name="{{ $ite['iid']}}" value="false"> 売り切れ</label>
                   </small>
                 </div>
