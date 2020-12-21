@@ -19,7 +19,7 @@
 </header>
 <hr>
 <div class="sarch_num">
-  <p>検索結果 : 2000件</p>
+  <p>検索結果 : 件</p>
 </div>
 <!-- itemエリア -->
 <div class="itembox">
@@ -29,7 +29,7 @@
   <ul>
     <li><a href="{{ route('itemcheck', $item->iid) }}" ><img src="{{asset('images/product/'.$item->pic)}}" alt="" ></a></li>
     <li class="text_center">{{$item -> iname}}</li>
-    <li class="text_center">{{$item -> iprice}}</li>
+    <li class="text_center">{{number_format($item -> iprice)}}円</li>
 </ul>
 @endforeach
 @endif
