@@ -81,6 +81,17 @@ class UserTableSeeder extends Seeder
                 'splace2' => '群馬県',
                 'splace3' => '滋賀県',   
             ],
+            [
+                'uid' => '7',
+                'upass' => '777',
+                'uname' => 'ななせ',  
+                'address' => '福島県',
+                'phone' => '00011112222',
+                'birth' => '1997/01/01',  
+                'splace1' => '山口県',  
+                'splace2' => '鹿児島県',
+                'splace3' => '新潟県',   
+            ],
 
         ]);
     }
