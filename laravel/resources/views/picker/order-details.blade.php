@@ -6,7 +6,11 @@
 
 @section('title',"注文詳細")
 
-@section('header_title',"注文番号：000")
+@section('header_title')
+  @foreach($orderData as $order)
+    <p>注文No.{{ $order['onum'] }}／{{ $order['uname'] }}様</p>
+  @endforeach
+@endsection
 
 @section('content')
 <div class="oder-details">
@@ -18,11 +22,11 @@
           <img src="{{asset('/images/product/'.$ite['pic']) }}" class="card-img-top" width="100" height="180">
           <div class="card-body">
             <p class="card-title">{{ $ite['iname'] }}</p>
-            <h5 class="card-text">{{ $ite['cold'] }}<br>金額：{{ $ite['iprice'] }}円<br>店舗：{{ $ite['shop'] }}</h5>
+            <h5 class="card-text">保存：{{ $ite['cold'] }}<br>金額：{{ $ite['iprice'] }}円<br>店舗：{{ $ite['shop'] }}</h5>
           </div>
           <div class="card-footer">
             <small class="text-muted">
-              <label><input type="radio" name="{{ $ite['iid']}}" value="true"> 購入済み</label>
+              <label><input type="radio" name="{{ $ite['iid']}}" value="true"> ピックアップ完了</label>
               <label><input type="radio" name="{{ $ite['iid']}}" value="false"> 売り切れ</label>
             </small>
           </div>

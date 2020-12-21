@@ -19,8 +19,9 @@ class EcController extends Controller
        return view('ec.item-list',['items' => $items]);
     }
 
-    public function Cartlist(){
-        $carts =  Cart::all();
+    public function Cartlist($iid){
+       $cart = $iid;
+       dd($cart);
         return view('ec.cart',['cart' => $carts]);
      }
 

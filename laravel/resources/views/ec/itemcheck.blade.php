@@ -24,7 +24,7 @@
 
 <div class="item_box">
 <ul>
-		<img src="{{asset('images/'.$item->pic)}}" alt="">
+		<img src="{{asset('images/product/'.$item->pic)}}" alt="">
   </ul>
 </div>
 
@@ -40,6 +40,8 @@
         <input type="submit" class="btn_cartin"  value="カートに入れる">
         </div>
 </div>
+</form>
+
 
 
 </body>

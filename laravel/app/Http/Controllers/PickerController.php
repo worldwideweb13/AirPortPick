@@ -26,6 +26,8 @@ class PickerController extends Controller
     }
 
     public function orderdetails($onum){
+        $orderData = Order_table::where('onum', $onum)->get();
+
         $cartData = Cart::where('onum', $onum)->get();
         $items = [];
 
@@ -37,6 +39,7 @@ class PickerController extends Controller
 
         // dd($items);
         return view('picker/order-details', [
+            'orderData' => $orderData,
             'items' => $items
             ]);
     }
