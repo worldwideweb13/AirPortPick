@@ -31,6 +31,10 @@ Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails')->nam
 
 Route::get('/picker/order-update/{onum}', 'PickerController@orderupdate');
 
+Route::get('/picker/otsu', function() {
+    return view('picker/otsu');
+});
+
 
 // ecのルート記述
 Route::get('/ec/item-list','EcController@Itemsall');
