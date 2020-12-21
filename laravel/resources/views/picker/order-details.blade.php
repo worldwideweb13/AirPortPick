@@ -31,7 +31,7 @@
                 <div class="card-footer">
                   <small class="text-muted">
                     <label><input type="radio" name="{{ $ite['iid']}}" value="true" required> ピックアップ済み</label>
-                    <label><input type="radio" name="{{ $ite['iid']}}" value="false"> 売り切れ</label>
+                    <label><input type="radio" name="{{ $ite['iid']}}" value="false"> 店頭品切れ</label>
                   </small>
                 </div>
               </div>
