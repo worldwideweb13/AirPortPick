@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{ asset('/css/picker/list-all.css') }}">
 @endpush
 
+@push('js')
+<script type="text/javascript" src="{{ asset('/js/manage/click.js') }}"></script>
+@endpush
+
 @section('title',"ホーム")
 
 @section('header_title',"注文リスト")
@@ -12,7 +16,7 @@
   <div class="list-all">
   @if(count($order_tables) > 0)
     @foreach($order_tables as $order_table)
-      <div class="card" data-href="{{ url('/picker/order-detail/'.$order_table->onum) }}">
+      <div class="card" data-href="{{ url('/picker/order-details/'.$order_table->onum) }}">
         <div class="card-header">
           注文番号：{{ $order_table->onum}}
         </div>
