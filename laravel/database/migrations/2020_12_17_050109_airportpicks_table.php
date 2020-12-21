@@ -48,6 +48,7 @@ class AirportpicksTable extends Migration
             $table->string('uid');//オーダーしたユーザーのID
             $table->string('uname');//オーダーしたユーザーの名前
             $table->string('pid');//担当ピッカーのID
+            $table->integer('comp');//ピックが完了したか。1が完了/0が未完
             $table->string('place');//受取場所
             $table->string('timelimit');//ピックの期限
             $table->string('cold');//常温・冷蔵・冷凍
