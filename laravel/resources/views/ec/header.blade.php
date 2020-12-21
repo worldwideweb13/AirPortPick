@@ -9,7 +9,10 @@
             </form>
           </div>
 
-          <p>Ari port Pick</p>
+          <div class="logbox">
+        <img src="{{asset('images/component/rogo.png')}}" alt="">
+      </div>
+
           <div id="navArea" class="nav">
 
             <nav>
