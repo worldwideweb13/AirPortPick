@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Cart;
 use App\Models\User;
+use App\Models\Order_table;
+
 
 
 
@@ -23,8 +25,9 @@ class EcController extends Controller
      }
 
      public function Userlist(){
-        $users =  User::all();
-        return view('ec.tyumon_info',['user' => $users]);
+        $oder_info = Order_table::all();
+        $users = User::all();
+        return view('ec.tyumon_info',['oder_info' => $oder_info],['users' => $users]);
      }
 
      public function accept($iid) {
