@@ -27,7 +27,7 @@
 @if(count($items) > 0)
 @foreach($items as $item)
   <ul>
-    <li><a href="{{ route('itemcheck', $item->iid) }}" ><img src="{{asset('images/'.$item->pic)}}" alt="" ></a></li>
+    <li><a href="{{ route('itemcheck', $item->iid) }}" ><img src="{{asset('images/product/'.$item->pic)}}" alt="" ></a></li>
     <li class="text_center">{{$item -> iname}}</li>
     <li class="text_center">{{$item -> iprice}}</li>
 </ul>
