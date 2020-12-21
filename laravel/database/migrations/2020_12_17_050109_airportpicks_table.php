@@ -83,9 +83,6 @@ class AirportpicksTable extends Migration
             $table->timestamps();
             $table->primary(['uid']);
          });
-
-
-
     }
 
     /**
