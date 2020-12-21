@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order_table;
+use App\Models\Cart;
+use App\Models\Item;
 
 class PickerController extends Controller
 
@@ -23,8 +25,10 @@ class PickerController extends Controller
     ]);
     }
 
-    public function orderdetails(){
-        return view('picker/order-details');
+    public function orderdetails($unum){
+
+        return view('picker/order-details', [
+        'unum'=>$unum]);
     }
 
 
