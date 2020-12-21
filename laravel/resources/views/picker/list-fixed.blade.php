@@ -17,10 +17,9 @@
           注文番号：{{ $order_table->onum}}
         </div>
         <div class="card-body">
-          <h2 class="card-title">{{ $order_table-> uname}} さま</h2>
+          <h2 class="card-title">{{ $order_table-> uname}} 様</h2>
           <h4 class="card-text">
             商品点数：{{ $order_table->tensu}}点<br>
-            冷凍冷蔵：{{ $order_table->cold}}<br>
             合計金額：¥{{ $order_table->item_total}}<br>
           </h4>
           <hr>
