@@ -32,6 +32,7 @@ Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails')->nam
 Route::get('/ec/item-list','EcController@Itemsall');
 
 // Route::get('cart/{iid}','EcController@Cartlist')->name('cart');
+Route::get('/ec/cart','EcController@Cartlist');
 
 Route::get('itemcheck/{iid}', 'EcController@accept')->name('itemcheck');
 
