@@ -21,19 +21,11 @@ Route::get('/', function () {
 Route::get('/manage/index', 'Order_tablesController@OrderList' );
 
 // pickerのルート記述
-Route::get('/picker/list-all', 'PickerController@listall');//リスト一覧表示
-
-//コントローラー移行前の記述
-// Route::get('/picker/list-all', function () {
-//     $order_tables = Order_table::orderBy('otime', 'asc')->get();
-//     return view('picker/list-all', [
-//         'order_tables' => $order_tables
-//     ]);
-// });
+Route::get('/picker/list-all', 'PickerController@listall');
 
 Route::get('/picker/list-fixed', 'PickerController@listfixed');
 
-Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails');
+Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails')->name('order-details');
 
 
 // ecのルート記述
