@@ -9,7 +9,7 @@ class PickerController extends Controller
 
 {
     public function listall(){
-        $order_tables = Order_table::orderBy('otime', 'asc')->get();
+        $order_tables = Order_table::where('comp', '0')->orderBy('otime', 'asc')->get();
         return view('picker/list-all', [
         'order_tables' => $order_tables
     ]);
@@ -17,7 +17,7 @@ class PickerController extends Controller
 
 
     public function listfixed(){
-        $order_tables = Order_table::orderBy('otime', 'asc')->get();
+        $order_tables = Order_table::where('comp', '1')->orderBy('otime', 'asc')->get();
         return view('picker/list-fixed', [
         'order_tables' => $order_tables
     ]);
