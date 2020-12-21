@@ -43,9 +43,9 @@ Route::get('/ec/item-list','EcController@Itemsall');
 
 Route::get('/ec/cart','App\Http\Controllers\EcController@Cartlist');
 
-Route::get('/ec/itemcheck', function () {
-    return view('ec/itemcheck');
-});
+Route::get('itemcheck/{iid}', 'EcController@accept')->name('itemcheck');
+
+
 
 
 Route::get('/ec/itemstatus', function () {
