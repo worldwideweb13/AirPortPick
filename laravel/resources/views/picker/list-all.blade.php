@@ -13,7 +13,7 @@
   @if(count($order_tables) > 0)
     @foreach($order_tables as $order_table)
       <div class="card">
-        <a href="{{ route(order-details, $order_table->onum) }}"></a>
+        <a href="{{ route('order-details', $order_table->onum) }}"></a>
         <div class="card-header">
           注文番号：{{ $order_table->onum}}
         </div>

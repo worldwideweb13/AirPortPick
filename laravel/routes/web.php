@@ -25,7 +25,7 @@ Route::get('/picker/list-all', 'PickerController@listall');
 
 Route::get('/picker/list-fixed', 'PickerController@listfixed');
 
-Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails');
+Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails')->name('order-details');
 
 
 // ecのルート記述

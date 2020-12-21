@@ -25,10 +25,20 @@ class PickerController extends Controller
     ]);
     }
 
-    public function orderdetails($unum){
+    public function orderdetails($onum){
+        $cartData = Cart::where('onum', $onum)->get();
+        $items = [];
 
+        foreach ($cartData as $cart){
+            $itemId = $cart['oiid'];//カートの中のアイテムの個別idを取得
+            $item = Item::where('iid', $itemId)->get();
+            $items[] = $item;
+        }
+
+        // dd($items);
         return view('picker/order-details', [
-        'unum'=>$unum]);
+            'items' => $items
+            ]);
     }
 
 
