@@ -53,7 +53,6 @@ class AirportpicksTable extends Migration
             $table->dateTime('timelimit');//ピックの期限
             $table->string('cold');//常温・冷蔵・冷凍
             $table->date('portdate')->nullable();//空港での受取日
-            $table->date('delidate')->nullable();//宅配の指定日
             $table->string('delitime')->nullable();//宅配の指定時間
             $table->integer('paid');//支払い済か
             $table->integer('ported');//客が空港でピックアップしたか
