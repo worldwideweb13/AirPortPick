@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Order_table;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,10 +18,7 @@ Route::get('/', function () {
 
 
 //manageのルート記述
-Route::get('/manage/index', function () {
-    return view('manage/index');
-});
-
+Route::get('/manage/index', 'Order_tablesController@OrderList' );
 
 // pickerのルート記述
 Route::get('/picker/list-all', 'PickerController@listall');//リスト一覧表示
