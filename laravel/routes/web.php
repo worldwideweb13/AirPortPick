@@ -31,9 +31,7 @@ Route::get('/picker/list-all', 'PickerController@listall');//リスト一覧表�
 //     ]);
 // });
 
-Route::get('/picker/list-fixed', function () {
-    return view('picker/list-fixed');
-});
+Route::get('/picker/list-fixed', 'PickerController@listfixed');
 
 Route::get('/picker/oder-details', function () {
     return view('picker/oder-details');
@@ -55,4 +53,3 @@ Route::get('/ec/itemstatus', function () {
 });
 
 Route::get('/ec/tyumon_info','App\Http\Controllers\EcController@Userlist');
-
