@@ -21,7 +21,7 @@
     <div class="header_fix">
       <div class="burger">
         <label for="menu" class="open close">
-          <img src="{{asset('/images/menu.png')}}" alt="">
+          <img src="{{asset('/images/component/menu.png')}}" alt="">
         </label>
       </div>
       <div class="header_title">
