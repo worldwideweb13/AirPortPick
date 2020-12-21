@@ -1,8 +1,8 @@
-
 <!-- echo '<pre>';
-var_dump($pickers);
+var_dump($deliveryTab);
 echo '</pre>';
 exit; -->
+
 
 @extends('manage.layouts')
 @section('js')
@@ -18,7 +18,6 @@ exit; -->
                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ピッカー未割当</a>
                 <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">ピッカー配送中</a>
                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">ピッカー配送完了</a>
-                <a class="nav-item nav-link" id="nav-extract-tab" data-toggle="tab" href="#nav-extract" role="tab" aria-controls="nav-extract" aria-selected="false">その他の注文</a>
             </div>
             <div class="tab-content col-10" id="nav-tabContent">
                 <!-- ピッカー未割当 -->
@@ -36,21 +35,21 @@ exit; -->
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($orderArray as $index => $order)
+                            @foreach($pickerTab as $index => $order)
                             <tr>
                                 <th scope="row">{{ $index + 1 }}</th>
-                                <td ><a href="" class="js-modal-open" >{{ $order->onum }}</a></td>
+                                <td ><a class="js-modal-open" href="" data-target="modal01">{{ $order->onum }}</a></td>
                                 <td>{{ $order->place }}</td>                                
                                 <td>{{ $order->otime }}</td>
-                                <td>{{ $order->delidate  }}:{{ $order->delitime }}</td>
+                                <td>{{ $order->portdate  }} {{ $order->delitime }}</td>
                                 <td class="d-flex">
                                     <div class="dropdown mr-1">
                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
                                             <li><button class="dropdown-item" value="">---</button></li>
-                                            <li><button class="dropdown-item" value="11月31日">@php echo date($order->delitime, strtotime('-1 day')) @endphp</button></li>
-                                            <li><button class="dropdown-item" value="12月1日">12月1日</button></li>
-                                            <li><button class="dropdown-item" value="12月2日">12月2日</button></li>
+                                            <li><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-2 day")) @endphp > @php echo date("m月d日", strtotime($order->portdate."-2 day")) @endphp</button></li>
+                                            <li><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-3 day")) @endphp > @php echo date("m月d日", strtotime($order->portdate."-3 day")) @endphp</button></li>
+                                            <li><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-4 day")) @endphp>@php echo date("m月d日", strtotime($order->portdate."-4 day")) @endphp</button></li>
                                         </ul>
                                     </div>
                                     <div class="dropdown">
@@ -95,11 +94,12 @@ exit; -->
                         <button type="button" class="btn btn-primary">割当確定</button>
                     </div>
                     <!-- モーダル画面 -->
-                    <div class="modal js-modal">
+                    <div id="modal01" class="modal js-modal">
                         <div class="modal__bg js-modal-close"></div>
                         <div class="modal__content">
                             <div class="order_id">
                                 <p>注文番号 : </p>
+                                <p id="m_onum"> </p>
                             </div>
                             <div class="item_box d-flex">
                                 <div class="item_name d-flex">
@@ -124,33 +124,25 @@ exit; -->
                                 <th scope="col">注文番号</th>
                                 <th scope="col">注文時刻</th>
                                 <th scope="col">受取希望時刻</th>
+                                <th scope="col">回収期限</th>
                                 <th scope="col">割当ピッカー</th>                            
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>12:00</td>
-                                <td>小笠原</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>12:00</td>
-                                <td>小笠原</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>12:00</td>
-                                <td>小笠原</td>
-                                </tr>
+                            @foreach($deliveryTab as $index => $order)
+                            <tr>
+                                <th scope="row">{{ $index + 1 }}</th>
+                                <td ><a class="js-modal-open" href="" data-target="modal01">{{ $order->onum }}</a></td>
+                                <td>{{ $order->place }}</td>                                
+                                <td>{{ $order->otime }}</td>
+                                <td>{{ $order->timelimit }}</td>                                              
+                                <td>{{ $order->pname }}</td>                                              
+                            </tr>
+                            @endforeach
                             </tbody>
                     </table>                                    
                 </div>
+                <!-- ピッカー配送完了タブ -->
                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <table class="table table-hover mt-3">
                             <thead>
@@ -159,61 +151,23 @@ exit; -->
                                 <th scope="col">注文番号</th>
                                 <th scope="col">注文時刻</th>
                                 <th scope="col">受取希望時刻</th>
-                                <th scope="col">宅配ピッカー</th>
+                                <th scope="col">回収期限</th>
+                                <th scope="col">割当ピッカー</th>                            
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($compTab as $index => $order)
                                 <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                    <th scope="row">{{ $index + 1 }}</th>
+                                    <td ><a class="js-modal-open" href="" data-target="modal01">{{ $order->onum }}</a></td>
+                                    <td>{{ $order->place }}</td>                                
+                                    <td>{{ $order->otime }}</td>
+                                    <td>{{ $order->timelimit }}</td>                                              
+                                    <td>{{ $order->pname }}</td>                                              
                                 </tr>
-                                <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                </tr>
-                                <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                     </table>                              
-                </div>
-                <div class="tab-pane fade" id="nav-extract" role="tabpanel" aria-labelledby="nav-extract-tab">
-                    <table class="table table-hover mt-3">
-                        <thead>
-                            <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">注文番号</th>
-                            <th scope="col">注文時刻</th>
-                            <th scope="col">注文完了時刻</th>
-                            <th scope="col">受取希望日時</th>
-                            <th scope="col">宅配ステータス</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                    </tbody>
                 </div>
             </div>
         </nav> 
