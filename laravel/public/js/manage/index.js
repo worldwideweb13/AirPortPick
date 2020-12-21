@@ -6,11 +6,25 @@ $(function () {
     });
 });
 // モーダルコンテンツ表示
-$('.js-modal-open').on('click', function () {
-    $('.js-modal').fadeIn();
-    return false;
+$(function(){
+    $('.js-modal-open').each(function(){
+        $(this).on('click',function(){
+            var target = $(this).data('target');
+            var modal = document.getElementById(target);
+            if(target == "modal01"){
+                var tds = $($(this).parent().parent().get(0)).find('td');
+                var oid = tds[0].textContent;
+                $("#m_onum").text(oid);
+            }
+            $(modal).fadeIn();
+            return false;
+        });
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modal').fadeOut();
+        return false;
+    }); 
 });
-$('.js-modal-close').on('click', function () {
-    $('.js-modal').fadeOut();
-    return false;
-});
+
+// 注文詳細表示
+$()
