@@ -26,4 +26,13 @@ class EcController extends Controller
         $users =  User::all();
         return view('ec.tyumon_info',['user' => $users]);
      }
+
+     public function accept($iid) {
+     
+      $item = Item::where('iid' ,$iid)->first();
+      return view('ec.itemcheck' , ['item' => $item]);
+
+    }
+
+     
 }
