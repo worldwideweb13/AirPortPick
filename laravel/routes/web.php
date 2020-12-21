@@ -33,9 +33,7 @@ Route::get('/picker/list-all', 'PickerController@listall');//リスト一覧表�
 
 Route::get('/picker/list-fixed', 'PickerController@listfixed');
 
-Route::get('/picker/oder-details', function () {
-    return view('picker/oder-details');
-});
+Route::get('/picker/order-details/{onum}', 'PickerController@orderdetails');
 
 
 // ecのルート記述

@@ -1,14 +1,15 @@
+
+<!-- echo '<pre>';
+var_dump($pickers);
+echo '</pre>';
+exit; -->
+
 @extends('manage.layouts')
 @section('js')
     <script type="text/javascript" src="{{asset('/js/manage/index.js') }}"></script>
 @endsection
 @section('content')
 @include('manage.temp')
-
-<!-- // echo '<pre>';
- var_dump($pickers);
- echo '</pre>';
- exit; -->
 
     <div class="col-10">
         <!-- タブとタブ内コンテンツの表示 -->
@@ -35,36 +36,50 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($orders as $index => $order)
+                            @foreach($orderArray as $index => $order)
                             <tr>
                                 <th scope="row">{{ $index + 1 }}</th>
                                 <td ><a href="" class="js-modal-open" >{{ $order->onum }}</a></td>
                                 <td>{{ $order->place }}</td>                                
                                 <td>{{ $order->otime }}</td>
-                                <td>{{ $order->portdate }}</td>
+                                <td>{{ $order->delidate  }}:{{ $order->delitime }}</td>
                                 <td class="d-flex">
                                     <div class="dropdown mr-1">
-                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">---</button>
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
-                                            <li><button class="dropdown-item" value="11月31日">11月31日</button></li>
+                                            <li><button class="dropdown-item" value="">---</button></li>
+                                            <li><button class="dropdown-item" value="11月31日">@php echo date($order->delitime, strtotime('-1 day')) @endphp</button></li>
                                             <li><button class="dropdown-item" value="12月1日">12月1日</button></li>
                                             <li><button class="dropdown-item" value="12月2日">12月2日</button></li>
-                                            <li><button class="dropdown-item" value="---">---</button></li>
                                         </ul>
                                     </div>
                                     <div class="dropdown">
-                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">---</button>
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
+                                            <li><button class="dropdown-item" value="">---</button></li>
+                                            <li><button class="dropdown-item" value="6:00">6:00</button></li>
+                                            <li><button class="dropdown-item" value="7:00">7:00</button></li>
+                                            <li><button class="dropdown-item" value="8:00">8:00</button></li>
+                                            <li><button class="dropdown-item" value="9:00">9:00</button></li>
                                             <li><button class="dropdown-item" value="10:00">10:00</button></li>
                                             <li><button class="dropdown-item" value="11:00">11:00</button></li>
                                             <li><button class="dropdown-item" value="12:00">12:00</button></li>
+                                            <li><button class="dropdown-item" value="13:00">13:00</button></li>
+                                            <li><button class="dropdown-item" value="14:00">14:00</button></li>
+                                            <li><button class="dropdown-item" value="15:00">15:00</button></li>
+                                            <li><button class="dropdown-item" value="16:00">16:00</button></li>
+                                            <li><button class="dropdown-item" value="17:00">17:00</button></li>
+                                            <li><button class="dropdown-item" value="18:00">18:00</button></li>
+                                            <li><button class="dropdown-item" value="19:00">19:00</button></li>
+                                            <li><button class="dropdown-item" value="22:00">22:00</button></li>
                                         </ul>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="dropdown">
-                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">---</button>
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
+                                            <li><button class="dropdown-item" value="">---</button></li>                                 
                                             @foreach($pickers as $picker)
                                             <li><button class="dropdown-item" value={{ $picker->pname }}>{{ $picker->pname }}</button></li>
                                             @endforeach
