@@ -24,76 +24,18 @@
 <!-- itemエリア -->
 <div class="itembox">
 
+@if(count($items) > 0)
+@foreach($items as $item)
   <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71RrmbHdEOL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
+    <li><a href="{{ url('ec/itemcheck/'.$item->iid) }}" ><img src="{{asset('images/'.$item->pic)}}" alt="" ></a></li>
+    <li class="text_center">{{$item -> iname}}</li>
+    <li class="text_center">{{$item -> iprice}}</li>
+</ul>
+@endforeach
+@endif
 
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-
-<!-- 二列目 -->
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-
-  <ul>
-    <li><a href=""><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-
-
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-
-  <ul>
-    <li><a href="{{ url('ec/itemcheck') }}"><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></li>
-    <li class="text_center">かに</li>
-    <li class="text_center">¥10,000</li>
-  </ul>
-  
-  
 </div>
+
 
 <!-- itemエリア end-->
 
