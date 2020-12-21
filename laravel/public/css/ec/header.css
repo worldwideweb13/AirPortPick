@@ -14,9 +14,7 @@ ul{
 	
   .header_top{
 	display: flex;
-	justify-content: space-between;
-	margin: auto;
-	width: 80%;
+    justify-content: space-around;
   }
 
   .top_color {
@@ -65,8 +63,9 @@ ul{
   }
 
   .searhbox {
-    position: relative;
-    top: 10px;
+	position: relative;
+	top: 17px;    
+	left: -4%;
 }
 	/* 検索バー end*/
 
@@ -126,7 +125,7 @@ ul{
 	  .toggle_btn {
 		display: block;
 		position: fixed;
-		 top: 10px;;
+		 top: 24px;;
 		height: 30px;
 		transition: all .5s;
 		cursor: pointer;
@@ -206,3 +205,18 @@ ul{
 
 		/* コンテンツ end*/
 	/* header end */
+
+
+	.logbox {
+		width: 270px;
+		  height: 74px;
+		  display: flex;
+		  
+	  }
+	  
+	  .logbox img{
+		width: 88%;
+		  object-fit: cover;
+		  display: flex;
+	  
+	  }
