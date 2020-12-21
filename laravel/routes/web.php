@@ -45,7 +45,7 @@ Route::get('/picker/oder-details', function () {
 
 
 // ecのルート記述
-Route::get('/ec/item-list','App\Http\Controllers\EcController@Itemsall');
+Route::get('/ec/item-list','EcController@Itemsall');
 
 Route::get('/ec/cart','App\Http\Controllers\EcController@Cartlist');
 
