@@ -1,21 +1,14 @@
-.item_box img{
-	margin-right: 10px;
-  
-  }
-  
-  .itembox img{
-  width: 225;
+.itembox img{
+  width: 225px;
   height: 225px;
-  
-  object-fit: cover;
+  object-fit: contain;
   }
   .itembox{
-	  width: 90%;
-  display: flex;
+    width: 80%;
+    display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   margin: auto;
-  
   }
   
   .sarch_num { 
