@@ -5,7 +5,7 @@
 @endpush
 
 @push('js')
-<script type="text/javascript" src="{{ asset('/js/manage/click.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/picker/click.js') }}"></script>
 @endpush
 
 @section('title',"ホーム")
