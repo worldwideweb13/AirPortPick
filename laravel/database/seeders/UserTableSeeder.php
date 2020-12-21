@@ -84,7 +84,7 @@ class UserTableSeeder extends Seeder
             [
                 'uid' => '7',
                 'upass' => '777',
-                'uname' => 'ななせ',  
+                'uname' => 'おがさわら',  
                 'address' => '福島県',
                 'phone' => '00011112222',
                 'birth' => '1997/01/01',  

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order_table;
+use App\Models\Cart;
+use App\Models\Item;
 
 class PickerController extends Controller
 
@@ -23,8 +25,20 @@ class PickerController extends Controller
     ]);
     }
 
-    public function orderdetails(){
-        return view('picker/order-details');
+    public function orderdetails($onum){
+        $cartData = Cart::where('onum', $onum)->get();
+        $items = [];
+
+        foreach ($cartData as $cart){
+            $itemId = $cart['oiid'];//カートの中のアイテムの個別idを取得
+            $item = Item::where('iid', $itemId)->get();
+            $items[] = $item;
+        }
+
+        // dd($items);
+        return view('picker/order-details', [
+            'items' => $items
+            ]);
     }
 
 

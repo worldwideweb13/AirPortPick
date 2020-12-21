@@ -21,12 +21,12 @@
 			<table>
 				<tr>
 					<th>商品合計</th>
-					<td>10,000円</td>
+					<td>{{$oder_info[0] -> item_total}}円</td>
 				</tr>
 		
 				<tr>
 					<th>送料</th>
-					<td>5,00円</td>
+					<td>{{$oder_info[0] -> dprice}}円</td>
 				</tr>
 			</table>
 		
@@ -39,7 +39,7 @@
 		<table>
 			<tr>
 				<th>合計</th>
-				<td>10,500円</td>
+				<td>{{$oder_info[0] -> item_total}}</td>
 			</tr>
 	
 		</table>
@@ -55,22 +55,17 @@
 		<table class="table">
 			<tr>
 				<th>氏名</th>
-				<td class="table_td">田中太郎</td>
-			</tr>
-	
-			<tr>
-				<th>郵便番号</th>
-				<td class="table_td">111-1111</td>
+				<td class="table_td">{{$users[2] -> uname}}</td>
 			</tr>
 	
 			<tr>
 				<th>住所</th>
-				<td class="table_td">東京都渋谷区原宿1-1-1</td>
+				<td class="table_td">{{$users[2] -> address}}</td>
 			</tr>
 	
 			<tr>
 				<th>電話番号</th>
-				<td class="table_td">080-1999-2234</td>
+				<td class="table_td">{{$users[2] -> phone}}</td>
 			</tr>
 		</table>
 	
@@ -78,11 +73,11 @@
 		<table class="table">
 			<tr>
 				<th class="table_td">受け取り方法</th>
-				<td>配送or空港受け取り</td>
+				<td>{{$oder_info[0] -> place}}</td>
 			</tr>
 			<tr>
-				<th>配送先住所</th>
-				<td class="table_td">東京都渋谷区原宿1-1-1</td>
+				<th>受け取り時間</th>
+				<td class="table_td">{{$oder_info[0] -> portdate}}</td>
 			</tr>
 			
 		</table>
