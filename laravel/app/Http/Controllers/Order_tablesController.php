@@ -12,9 +12,19 @@ class Order_tablesController extends Controller
     //データ取得処理
     public function OrderList(){
         $orders = Order_table::orderBy('onum','asc')->get();
-        $pickers = Picker::orderBy('pid','asc')->get();        
+        $pickers = Picker::orderBy('pid','asc')->get();
+        $orderArray = array();
+        foreach($orders as $order){
+            if($order["place"]=="空港"){
+                $delidate = $order["portdate"];
+                $order["delidate"] = $delidate;
+                array_push($orderArray,$order);
+            } else {
+                array_push($orderArray,$order);
+            }
+        }
         return view('manage/index',[
-            'orders' => $orders,
+            'orderArray' => $orderArray,
             'pickers'=> $pickers
         ]);    
     }
