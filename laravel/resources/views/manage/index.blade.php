@@ -1,5 +1,5 @@
 <!-- echo '<pre>';
-var_dump($deliveryTab);
+var_dump($pickers);
 echo '</pre>';
 exit; -->
 
@@ -35,64 +35,86 @@ exit; -->
                             </tr>
                         </thead>
                         <tbody>
+                <form action="{{ url('manage/picker-assign/') }}" method="POST">
+                {{ csrf_field() }}
                             @foreach($pickerTab as $index => $order)
                             <tr>
                                 <th scope="row">{{ $index + 1 }}</th>
-                                <td ><a class="js-modal-open" href="" data-target="modal01">{{ $order->onum }}</a></td>
+                                <td><a class="js-modal-open" href="" data-target="modal01">{{ $order->onum }}</a></td>
                                 <td>{{ $order->place }}</td>                                
                                 <td>{{ $order->otime }}</td>
                                 <td>{{ $order->portdate  }} {{ $order->delitime }}</td>
-                                <td class="d-flex">
-                                    <div class="dropdown mr-1">
+                                <!-- form送信時のため注文番号を配列で保持 -->
+                                <input type="hidden" name="onum[]" value="{{$order->onum}}"/>                                <td class="d-flex">
+                                    <select class="dropdown mr-1" name="limit_date[]">
                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
-                                            <li><button class="dropdown-item" value="">---</button></li>
-                                            <li><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-2 day")) @endphp > @php echo date("m月d日", strtotime($order->portdate."-2 day")) @endphp</button></li>
-                                            <li><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-3 day")) @endphp > @php echo date("m月d日", strtotime($order->portdate."-3 day")) @endphp</button></li>
-                                            <li><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-4 day")) @endphp>@php echo date("m月d日", strtotime($order->portdate."-4 day")) @endphp</button></li>
+                                            <option><button class="dropdown-item" value="">---</button></option>
+                                            <option><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-2 day")) @endphp > @php echo date("m月d日", strtotime($order->portdate."-2 day")) @endphp</button></option>
+                                            <option><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-3 day")) @endphp > @php echo date("m月d日", strtotime($order->portdate."-3 day")) @endphp</button></option>
+                                            <option><button class="dropdown-item" value= @php echo date("m月d日", strtotime($order->portdate."-4 day")) @endphp>@php echo date("m月d日", strtotime($order->portdate."-4 day")) @endphp</button></option>
                                         </ul>
-                                    </div>
-                                    <div class="dropdown">
+                                    </select>
+                                    <select class="dropdown" name="limit_time[]">
                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                         <ul class="dropdown-menu">
-                                            <li><button class="dropdown-item" value="">---</button></li>
-                                            <li><button class="dropdown-item" value="6:00">6:00</button></li>
-                                            <li><button class="dropdown-item" value="7:00">7:00</button></li>
-                                            <li><button class="dropdown-item" value="8:00">8:00</button></li>
-                                            <li><button class="dropdown-item" value="9:00">9:00</button></li>
-                                            <li><button class="dropdown-item" value="10:00">10:00</button></li>
-                                            <li><button class="dropdown-item" value="11:00">11:00</button></li>
-                                            <li><button class="dropdown-item" value="12:00">12:00</button></li>
-                                            <li><button class="dropdown-item" value="13:00">13:00</button></li>
-                                            <li><button class="dropdown-item" value="14:00">14:00</button></li>
-                                            <li><button class="dropdown-item" value="15:00">15:00</button></li>
-                                            <li><button class="dropdown-item" value="16:00">16:00</button></li>
-                                            <li><button class="dropdown-item" value="17:00">17:00</button></li>
-                                            <li><button class="dropdown-item" value="18:00">18:00</button></li>
-                                            <li><button class="dropdown-item" value="19:00">19:00</button></li>
-                                            <li><button class="dropdown-item" value="22:00">22:00</button></li>
+                                            <option><button class="dropdown-item" value="">---</button></option>
+                                            <option><button class="dropdown-item" value="6:00">6:00</button></option>
+                                            <option><button class="dropdown-item" value="7:00">7:00</button></option>
+                                            <option><button class="dropdown-item" value="8:00">8:00</button></option>
+                                            <option><button class="dropdown-item" value="9:00">9:00</button></option>
+                                            <option><button class="dropdown-item" value="10:00">10:00</button></option>
+                                            <option><button class="dropdown-item" value="11:00">11:00</button></option>
+                                            <option><button class="dropdown-item" value="12:00">12:00</button></option>
+                                            <option><button class="dropdown-item" value="13:00">13:00</button></option>
+                                            <option><button class="dropdown-item" value="14:00">14:00</button></option>
+                                            <option><button class="dropdown-item" value="15:00">15:00</button></option>
+                                            <option><button class="dropdown-item" value="16:00">16:00</button></option>
+                                            <option><button class="dropdown-item" value="17:00">17:00</button></option>
+                                            <option><button class="dropdown-item" value="18:00">18:00</button></option>
+                                            <option><button class="dropdown-item" value="19:00">19:00</button></option>
+                                            <option><button class="dropdown-item" value="22:00">22:00</button></option>
                                         </ul>
-                                    </div>
+                                    </select>
                                 </td>
                                 <td>
-                                    <div class="dropdown">
+                                    <select class="dropdown" name="picker_id[]">
                                         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                                        <ul class="dropdown-menu">
-                                            <li><button class="dropdown-item" value="">---</button></li>                                 
+                                            <option value="">---</option>                                 
                                             @foreach($pickers as $picker)
-                                            <li><button class="dropdown-item" value={{ $picker->pname }}>{{ $picker->pname }}</button></li>
+                                            <option value={{ $picker->pid }}>{{ $picker->pname }}</option>
                                             @endforeach
-                                        </ul>
-                                    </div>
+                                    </select>
                                 </td>                                                
                             </tr>
                             @endforeach
                         </tbody>
                     </table>            
                     <!-- 編集内容確定ボタン -->
-                    <div class="text-right">         
+                    <div class="text-right js-modal-open" data-target="modal_submit">         
                         <button type="button" class="btn btn-primary">割当確定</button>
                     </div>
+                    <!-- モーダル画面（商品詳細） -->
+                    <div id="modal01" class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <div class="order_id">
+                                <p>注文番号 : </p>
+                                <p id="m_onum"> </p>
+                            </div>
+                            <div class="item_box d-flex">
+                                <div class="item_name d-flex">
+                                    <p>商品名 : </p>
+                                    <p>白い恋人</p>
+                                </div>                            
+                                <div class="stock d-flex">
+                                    <p>注文数 : </p>
+                                    <p>1個</p>
+                                </div>                                                    
+                            </div>
+                            <a class="js-modal-close" href="">閉じる</a>
+                        </div>
+                    </div> 
                     <!-- モーダル画面 -->
                     <div id="modal01" class="modal js-modal">
                         <div class="modal__bg js-modal-close"></div>
@@ -113,6 +135,23 @@ exit; -->
                             </div>
                             <a class="js-modal-close" href="">閉じる</a>
                         </div>
+                    </div>                    
+                    <!-- モーダル画面 -->
+                    <div id="modal_submit" class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <div class="form">
+                                <p class="h5">割当を確定しますか？<br>(割り当てたピッカーへの指示が飛びます！ご注意下さい)</p>                                                   
+                            </div>
+                            <div class="submit d-flex flex-row">
+                                <button type="submit" class="btn btn-primary mr-3">割当確定</button>
+                                <div class="close mt-1">
+                                    <a class="js-modal-close" href="">閉じる</a>
+                                </div>                            
+                            </div>
+                        </div>
+                <!-- 38行目前後 formの閉じタグ -->
+                </form>
                     </div>                    
                 </div>
                 <!-- ピッカー配送中タブ -->
@@ -169,7 +208,7 @@ exit; -->
                             </tbody>
                     </table>                              
                 </div>
-            </div>
+            </div>            
         </nav> 
     </div>
 <!-- ボディ要素の閉じタグ  -->

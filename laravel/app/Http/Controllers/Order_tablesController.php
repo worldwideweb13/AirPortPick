@@ -47,4 +47,21 @@ class Order_tablesController extends Controller
             'compTab'=> $compTab
         ]);    
     }
+    // ピッカー更新処理
+    public function PickerAssign(Request $request){
+        foreach ($request->onum as $index => $onum) {
+            // ->get()の中から最初の一つを取り出す。
+            Order_table::where('onum',$onum)
+                        ->update(['pid' => $request->picker_id[$index]],['timelimit' => $request->limit_time[$index]]);
+            // Order_table::find($onum)
+            // ->upadate(['timelimit' => $request->limit_time[$index]],
+            //         ['pid' => $request->picker_id[$index]]);
+        }
+
+        return redirect('/manage/index');
+
+        // echo '<pre>';
+        // var_dump($request);
+        // echo '</pre>';
+    }
 }
