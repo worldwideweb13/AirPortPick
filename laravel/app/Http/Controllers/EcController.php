@@ -20,7 +20,8 @@ class EcController extends Controller
     }
 
     public function Cartlist(){
-        return view('ec.cart');
+       $cart_item = Item::all();
+        return view('ec.cart',['cart_item' => $cart_item]);
      }
 
      public function Userlist(){
