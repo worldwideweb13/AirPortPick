@@ -11,7 +11,7 @@ class PickerController extends Controller
 
 {
     public function listall(){
-        $order_tables = Order_table::where('comp', '0')->orderBy('otime', 'asc')->get();
+        $order_tables = Order_table::where('comp', '0')->orderBy('timelimit', 'asc')->get();
         return view('picker/list-all', [
         'order_tables' => $order_tables
     ]);
@@ -19,7 +19,7 @@ class PickerController extends Controller
 
 
     public function listfixed(){
-        $order_tables = Order_table::where('comp', '1')->orderBy('otime', 'asc')->get();
+        $order_tables = Order_table::where('comp', '1')->orderBy('otime', 'desc')->get();
         return view('picker/list-fixed', [
         'order_tables' => $order_tables
     ]);
@@ -37,14 +37,16 @@ class PickerController extends Controller
             $items[] = $item;
         }
 
-        // dd($items);
         return view('picker/order-details', [
             'orderData' => $orderData,
             'items' => $items
             ]);
     }
 
-
+    public function orderupdate($onum){
+        $order = Order_table::where('onum',$onum)->update(['comp' => '1']);
+        return redirect('picker/otsu');
+    }
 
 
 }
