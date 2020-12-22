@@ -30,11 +30,11 @@
 
 </div>
 <div class="item_sentence">
-  <h2>店舗名:{{$item -> shop}}</h2>
+  <h2>{{$item -> iname}}</h2>
   <h3>{{$item -> itext}}</h3>
-    <p>{{$item -> iname}}</p>
+    <p>店舗名:{{$item -> shop}}</p>
       <div class="li_text">
-        <li class="text_center">{{$item -> iprice}}<input type="number" value="1" name="num" class="cartin-number"></li>
+        <li class="text_center">{{number_format($item -> iprice)}}円<input type="number" value="1" name="num" class="cartin-number"></li>
         </div>
       <div class="text_center btn">
         <input type="submit" class="btn_cartin"  value="カートに入れる">
