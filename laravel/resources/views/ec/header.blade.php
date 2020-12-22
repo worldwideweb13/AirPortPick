@@ -10,7 +10,9 @@
           </div>
 
           <div class="logbox">
-        <img src="{{asset('images/component/rogo.png')}}" alt="">
+            <a href="{{ url('ec/item-list') }}">
+        <img src="{{asset('images/component/rogo.png')}}" alt="">          </a>
+
       </div>
 
           <div id="navArea" class="nav">
