@@ -3,15 +3,61 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>注文確認</title>
 	<link rel="stylesheet" href="{{ asset('/css/ec/tyumon_info.css') }}">
 
 </head>
 <style>
 
+li{
+  list-style: none;
+
+}
+
+.btn-item{
+    margin-top: 30px;
+}
+
+.btn_c a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #879496;
+    width: 58px;
+    display: block;
+    text-align: center;
+    padding: 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    box-shadow: 0 2px 10px 0 #9E9E9E;   
+}
+.btn-list {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    list-style: none;
+}
+.btn-item>a{
+    padding: 12px;  
+    font-size: 20px;
+}
+
+.btn-buy>a{
+    color: #fff;
+    border:solid 1px #d095b7;
+    color: #d095b7;
+    text-decoration: none;
+}
+.btn-calculate>a{
+    background: #d095b7;
+    color: #fff;
+}
 
 </style>
 <body>
+
+
+<li class="btn-item btn-buy"><a href="{{ url('ec/item-list') }}">商品ページへ</a></li>
+
 
 	<div class="item_paybox">
 		<div class="pay_text">
@@ -21,12 +67,12 @@
 			<table>
 				<tr>
 					<th>商品合計</th>
-					<td>{{$oder_info[0] -> item_total}}円</td>
+					<td>1,700円</td>
 				</tr>
 		
 				<tr>
 					<th>送料</th>
-					<td>{{$oder_info[0] -> dprice}}円</td>
+					<td>0円</td>
 				</tr>
 			</table>
 		
@@ -39,7 +85,7 @@
 		<table>
 			<tr>
 				<th>合計</th>
-				<td>{{$oder_info[0] -> item_total}}</td>
+				<td>1,700円</td>
 			</tr>
 	
 		</table>
