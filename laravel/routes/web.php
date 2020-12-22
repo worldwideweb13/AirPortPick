@@ -18,7 +18,10 @@ Route::get('/', function () {
 
 
 //manageのルート記述
-Route::get('/manage/index', 'Order_tablesController@OrderList' );
+Route::get('/manage/index', 'Order_tablesController@OrderList');
+
+Route::post('/manage/picker-assign/', 'Order_tablesController@PickerAssign');
+
 
 
 
