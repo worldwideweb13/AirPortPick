@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>注文確認</title>
 	<link rel="stylesheet" href="{{ asset('/css/ec/tyumon_info.css') }}">
 
 </head>
@@ -21,12 +21,12 @@
 			<table>
 				<tr>
 					<th>商品合計</th>
-					<td>{{$oder_info[0] -> item_total}}円</td>
+					<td>1,700円</td>
 				</tr>
 		
 				<tr>
 					<th>送料</th>
-					<td>{{$oder_info[0] -> dprice}}円</td>
+					<td>0円</td>
 				</tr>
 			</table>
 		
@@ -39,7 +39,7 @@
 		<table>
 			<tr>
 				<th>合計</th>
-				<td>{{$oder_info[0] -> item_total}}</td>
+				<td>1,700円</td>
 			</tr>
 	
 		</table>

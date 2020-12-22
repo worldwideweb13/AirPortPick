@@ -29,27 +29,29 @@
 
   <tr>
 
-  <td class="td_item"><a href=""><img src="https://m.media-amazon.com/images/I/71JawAq1MmL._AC_UL320_.jpg" alt=""></a></td>
-  <td>かに</td>
-  <td>10,000円</td>
-  <td>2</td>
-  <td>20,000円</td>
+  <td class="td_item"><a href=""><img src="{{asset('images/product/13bisu.jpg')}}" alt=""></a></td>
+<td>{{$cart_item[12] -> iname}}</td>
+  <td>{{number_format($cart_item[12] -> iprice)}}</td>
+  <td>1</td>
+  <td>1,000円</td>
   </tr>
 
-  <td class="td_item"><img src="https://m.media-amazon.com/images/I/515p3hmHvdL._AC_UL320_.jpg" alt=""></td>
-  <td>白い恋人</td>
-  <td>2,000円</td>
-  <td>2</td>
-  <td>4,000円</td>
-  
+
+  <tr>
+
+<td class="td_item"><a href=""><img src="{{asset('images/product/14meron.jpg')}}" alt=""></a></td>
+<td>{{$cart_item[13] -> iname}}</td>
+<td>{{number_format($cart_item[13] -> iprice)}}</td>
+<td>1</td>
+<td>700円</td>
+</tr>
 </table>
 
 
 <table>
 	  <th>
 		  <label >合計</label>
-		  <td class="td_total">24,000円</td>
-
+		  <td class="td_total">1,700円</td>
 	  </th>
 	  
 </table>
