@@ -9,9 +9,55 @@
 </head>
 <style>
 
+li{
+  list-style: none;
+
+}
+
+.btn-item{
+    margin-top: 30px;
+}
+
+.btn_c a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #879496;
+    width: 58px;
+    display: block;
+    text-align: center;
+    padding: 9px;
+    border-radius: 5px;
+    font-size: 11px;
+    box-shadow: 0 2px 10px 0 #9E9E9E;   
+}
+.btn-list {
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+    list-style: none;
+}
+.btn-item>a{
+    padding: 12px;  
+    font-size: 20px;
+}
+
+.btn-buy>a{
+    color: #fff;
+    border:solid 1px #d095b7;
+    color: #d095b7;
+    text-decoration: none;
+}
+.btn-calculate>a{
+    background: #d095b7;
+    color: #fff;
+}
 
 </style>
 <body>
+
+
+<li class="btn-item btn-buy"><a href="{{ url('ec/item-list') }}">商品ページへ</a></li>
+
 
 	<div class="item_paybox">
 		<div class="pay_text">
