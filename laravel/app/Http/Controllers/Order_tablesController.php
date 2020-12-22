@@ -19,7 +19,7 @@ class Order_tablesController extends Controller
         //         ->SELECT('carts.onum','carts.oiid','carts.sprice','items.iname','items.iprice','items.pic','items.shop','items.cold')
         //         ->get();
         $orders = Order_table::
-            leftjoin('pickers','Order_tables.pid','=','pickers.pid')
+            leftjoin('pickers','order_tables.pid','=','pickers.pid')
                 // ->SELECT('carts.onum','carts.oiid','carts.sprice','items.iname','items.iprice','items.pic','items.shop','items.cold')
             ->get();
         // ピッカー未割当
